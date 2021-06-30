@@ -1,0 +1,744 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background-color: #001;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+
+p,
+span {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 600px) {
+  p,
+  span {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #121215;
+}
+
+body header {
+  background-color: #f4f4f4;
+  -webkit-box-shadow: 0 0 10px rgba(5, 11, 46, 0.111);
+          box-shadow: 0 0 10px rgba(5, 11, 46, 0.111);
+}
+
+body header input {
+  color: #121215;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+}
+
+body header nav #add-note-btn {
+  color: #121215;
+  background-color: #f4f4f4;
+  -webkit-box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.118), -4px -4px 5px rgba(255, 255, 255, 0.966);
+          box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.118), -4px -4px 5px rgba(255, 255, 255, 0.966);
+}
+
+body header nav .theme-toggle {
+  background-color: #121215;
+}
+
+body header nav .theme-toggle .fas {
+  background-color: #f4f4f4;
+  color: #121215;
+}
+
+body header nav .fa-bell {
+  color: #121215;
+}
+
+body main #form {
+  background-color: #f4f4f4;
+  -webkit-box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.09);
+          box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.09);
+}
+
+body main #form input {
+  color: #121215;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+}
+
+body main #form textarea {
+  color: #121215;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  background-color: transparent;
+}
+
+body main #form button {
+  background-color: #0051ff;
+  color: #f4f4f4;
+}
+
+body main #form button:hover {
+  background-color: #121215;
+}
+
+body main .read-note {
+  background-color: #f4f4f4;
+  -webkit-box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.09);
+          box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.09);
+}
+
+body main .notes .note {
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  background-color: #f9f9f9;
+}
+
+body main .notes .note .delete {
+  background-color: #121215;
+  color: #ff0f0f;
+}
+
+body.dark {
+  background-color: #121215;
+  color: #f4f4f4;
+}
+
+body.dark header {
+  background-color: #121215;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.535);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.535);
+}
+
+body.dark header input {
+  color: #f4f4f4;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+body.dark header nav #add-note-btn {
+  color: #f4f4f4;
+  background-color: #121215;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.582);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.582);
+}
+
+body.dark header nav .theme-toggle {
+  background-color: #f4f4f4;
+}
+
+body.dark header nav .theme-toggle .fas {
+  background-color: #121215;
+  color: #f4f4f4;
+}
+
+body.dark header nav .fa-bell {
+  color: #f4f4f4;
+}
+
+body.dark main #form {
+  background-color: #121215;
+  -webkit-box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.755);
+          box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.755);
+}
+
+body.dark main #form input {
+  color: #f4f4f4;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+body.dark main #form textarea {
+  color: #f4f4f4;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background-color: transparent;
+}
+
+body.dark main #form button {
+  background-color: #0051ff;
+  color: #f4f4f4;
+}
+
+body.dark main #form button:hover {
+  background-color: #f4f4f4;
+  color: #121215;
+}
+
+body.dark main .read-note {
+  background-color: #121215;
+  -webkit-box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.755);
+          box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.755);
+}
+
+body.dark main .notes .note {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background-color: #17171a;
+}
+
+body.dark main .notes .note .delete {
+  background-color: #ff0f0f;
+  color: #f4f4f4;
+}
+
+body {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 20px 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header input {
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  width: 40%;
+  border: 0;
+  background-color: transparent;
+}
+
+header input:focus {
+  outline: none;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header nav #add-note-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 15px;
+  border: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: auto;
+          flex-direction: auto;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+header nav #add-note-btn:focus {
+  outline: none;
+}
+
+header nav #add-note-btn:active {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+}
+
+header nav .theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  padding: 2px;
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+header nav .theme-toggle .fas {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 25px;
+  height: 25px;
+  font-size: 14px;
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: auto;
+          flex-direction: auto;
+}
+
+header nav .theme-toggle .fas.dark {
+  -webkit-animation: dark-mode 0.5s 0ms ease forwards;
+          animation: dark-mode 0.5s 0ms ease forwards;
+}
+
+header nav .theme-toggle .fas.light {
+  -webkit-animation: light-mode 0.5s 0ms ease forwards;
+          animation: light-mode 0.5s 0ms ease forwards;
+}
+
+@-webkit-keyframes dark-mode {
+  50% {
+    width: 55px;
+    left: 2px;
+  }
+  100% {
+    width: 25px;
+    left: 31px;
+  }
+}
+
+@keyframes dark-mode {
+  50% {
+    width: 55px;
+    left: 2px;
+  }
+  100% {
+    width: 25px;
+    left: 31px;
+  }
+}
+
+@-webkit-keyframes light-mode {
+  50% {
+    right: 2px;
+    left: auto;
+    width: 55px;
+  }
+  100% {
+    width: 25px;
+    right: 31px;
+  }
+}
+
+@keyframes light-mode {
+  50% {
+    right: 2px;
+    left: auto;
+    width: 55px;
+  }
+  100% {
+    width: 25px;
+    right: 31px;
+  }
+}
+
+header nav .fa-bell {
+  font-size: 25px;
+}
+
+header nav .fa-bell.notify-delete {
+  cursor: pointer;
+  -webkit-animation: notification 0.5s linear 3;
+          animation: notification 0.5s linear 3;
+}
+
+header nav .fa-bell.notify-add {
+  cursor: pointer;
+  -webkit-animation: notification 0.5s linear 3;
+          animation: notification 0.5s linear 3;
+}
+
+@-webkit-keyframes notification {
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes notification {
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    padding: 15px 0;
+  }
+}
+
+main {
+  padding: 50px 0;
+}
+
+main .notification {
+  border-radius: 2px;
+  padding: 10px 5px;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  width: 100px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: -40px;
+  right: 0;
+  z-index: 3;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+main .notification.added {
+  background-color: #0051ff;
+}
+
+main .notification.show {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+@media only screen and (max-width: 800px) {
+  main .notification {
+    right: 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  main .notification {
+    right: 15px;
+  }
+}
+
+main #form {
+  position: fixed;
+  padding: 30px;
+  width: 40%;
+  z-index: 3;
+  top: 15%;
+  left: 30%;
+  border-radius: 4px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+main #form.show {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main #form .fa-backspace {
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+main #form input,
+main #form textarea,
+main #form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+main #form input:focus,
+main #form textarea:focus,
+main #form button:focus {
+  outline: none;
+}
+
+main #form input {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: transparent;
+  border: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  main #form input {
+    font-size: 18px;
+  }
+}
+
+main #form textarea {
+  font-size: 14px;
+  margin: 10px 0 20px 0;
+  border-radius: 2px;
+}
+
+main #form button {
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+main #form button:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+@media only screen and (min-width: 1500px) {
+  main #form {
+    width: 30%;
+    left: 35%;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  main #form {
+    width: 40%;
+    left: 30%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  main #form {
+    width: 50%;
+    left: 25%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  main #form {
+    width: 60%;
+    left: 20%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main #form {
+    width: 80%;
+    left: 10%;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  main #form {
+    width: 90%;
+    left: 5%;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  main #form {
+    padding: 10px;
+  }
+}
+
+main .read-note {
+  position: fixed;
+  padding: 30px;
+  width: 40%;
+  z-index: 4;
+  top: 15%;
+  left: 30%;
+  border-radius: 4px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+main .read-note.focus {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main .read-note .fa-backspace {
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+main .read-note h1 {
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 1500px) {
+  main .read-note {
+    width: 30%;
+    left: 35%;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  main .read-note {
+    width: 40%;
+    left: 30%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  main .read-note {
+    width: 50%;
+    left: 25%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  main .read-note {
+    width: 60%;
+    left: 20%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main .read-note {
+    width: 80%;
+    left: 10%;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  main .read-note {
+    width: 90%;
+    left: 5%;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  main .read-note {
+    padding: 10px;
+  }
+}
+
+main .notes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+main .notes .note {
+  position: relative;
+  padding: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+main .notes .note:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+main .notes .note p {
+  margin: 10px 20px 0 0;
+}
+
+main .notes .note .delete {
+  font-size: 14px;
+  border-radius: 2px;
+  padding: 5px 10px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+main .notes .note .delete:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+@media only screen and (max-width: 600px) {
+  main .notes {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

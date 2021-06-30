@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Take notes</title>
+</head>
+
+<body onload="displayNotes()">
+
+    <header>
+        <div class="container">
+            <input type="search" placeholder="Search note" autocomplete="off">
+
+            <nav>
+                <!-- form activation button -->
+                <button id="add-note-btn" type="button" title="Add new note"><i class="fas fa-plus"></i></button>
+                <!-- theme toggle -->
+                <div class="theme-toggle" title="Toggle theme"><i class="fas fa-sun"></i></div>
+                <i class="fas fa-bell" title="notifications"></i>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+    <main>
+        <div class="container">
+            <!-- creating a new note -->
+            <div id="form">
+                <i class="fas fa-backspace" title="Cancel"></i>
+                <input type="text" id="title-input" placeholder="Title your note" autocomplete="off">
+                <textarea id="note-input" rows="10" placeholder="Take note..."></textarea>
+                <button id="save-note-btn" type="button">SAVE</button>
+            </div>
+            
+            <!-- read note -->
+            <div class="read-note">
+                <i class="fas fa-backspace"></i>
+            </div>
+
+            <!-- exsting notes fetched from database -->
+            <div class="notes"></div>
+        </div>
+    </main>
+
+
+
+
+    <script src="./js/main.js" defer></script>
+</body>
+</html>

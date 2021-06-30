@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  // font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Oswald", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background-color: #001;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 20px;
+  }
+}
+
+p,
+span {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.8;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+
+  @media only screen and (max-width: 800px) {
+    padding: 0 20px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 0 15px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@mixin flex($align, $justify, $direction) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin grid($columns, $gap) {
+  display: grid;
+  grid-template-columns: $columns;
+  gap: $gap;
+}
+
+// colors
+$white: #f4f4f4;
+$black: rgb(12, 12, 14);
+
+$dark: rgb(18, 18, 21);
+
+$blue: rgb(0, 81, 255);
+$red: rgb(255, 15, 15);
+
+$border-on-light: rgba(0, 0, 0, 0.22);
+$border-on-dark: rgba(255, 255, 255, 0.22);
+
+// theme toggle
+body {
+  background-color: $white;
+  color: $dark;
+
+  //   header colors default
+  header {
+    background-color: $white;
+    box-shadow: 0 0 10px rgba(5, 11, 46, 0.111);
+
+    input {
+      color: $dark;
+      border-bottom: 1px solid $border-on-light;
+    }
+
+    nav {
+      #add-note-btn {
+        color: $dark;
+        background-color: $white;
+        box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.118),
+          -4px -4px 5px rgba(255, 255, 255, 0.966);
+      }
+
+      .theme-toggle {
+        background-color: $dark;
+
+        .fas {
+          background-color: $white;
+          color: $dark;
+        }
+      }
+
+      .fa-bell {
+        color: $dark;
+      }
+    }
+  }
+
+  //   main section colors default
+  main {
+    #form {
+      background-color: $white;
+      box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.09);
+
+      input {
+        color: $dark;
+        border-bottom: 1px solid $border-on-light;
+      }
+      textarea {
+        color: $dark;
+        border: 1px solid $border-on-light;
+        background-color: transparent;
+      }
+
+      button {
+        background-color: $blue;
+        color: $white;
+
+        &:hover {
+          background-color: $dark;
+        }
+      }
+    }
+
+    .read-note {
+      background-color: $white;
+      box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.09);
+    }
+
+    .notes {
+      .note {
+        border: 1px solid $border-on-light;
+        background-color: lighten($color: $white, $amount: 2%);
+
+        .delete {
+          background-color: $dark;
+          color: $red;
+        }
+      }
+    }
+  }
+
+  //   on dark mode
+  &.dark {
+    background-color: $dark;
+    color: $white;
+
+    // header colors on dark mode
+    header {
+      background-color: $dark;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.535);
+
+      input {
+        color: $white;
+        border-bottom: 1px solid $border-on-dark;
+      }
+
+      nav {
+        #add-note-btn {
+          color: $white;
+          background-color: $dark;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.582);
+        }
+
+        .theme-toggle {
+          background-color: $white;
+
+          .fas {
+            background-color: $dark;
+            color: $white;
+          }
+        }
+
+        .fa-bell {
+          color: $white;
+        }
+      }
+    }
+
+    //   main section colors on dark mode
+    main {
+      #form {
+        background-color: $dark;
+        box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.755);
+
+        input {
+          color: $white;
+          border-bottom: 1px solid $border-on-dark;
+        }
+        textarea {
+          color: $white;
+          border: 1px solid $border-on-dark;
+          background-color: transparent;
+        }
+
+        button {
+          background-color: $blue;
+          color: $white;
+
+          &:hover {
+            background-color: $white;
+            color: $dark;
+          }
+        }
+      }
+
+      .read-note {
+        background-color: $dark;
+        box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.755);
+      }
+
+      .notes {
+        .note {
+          border: 1px solid $border-on-dark;
+          background-color: lighten($color: $dark, $amount: 2%);
+
+          .delete {
+            background-color: $red;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
